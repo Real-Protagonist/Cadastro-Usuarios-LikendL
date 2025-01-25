@@ -11,12 +11,12 @@
             <h2 class="mt-5">Cadastro de Usuarios</h2>
 
             {% if message %}
-            <div class="alert alert-primary">
+            <div class="alert alert-success mt-3">
                 {{ message }}
             </div>
             {% endif %}
 
-            <form method="post" action="/register" class="mt-4">
+            <form method="POST" action="/register" class="mt-4">
                 <div class="form-group">
                     <label for="name">Nome:</label>
                     <input type="text" name="name" id="name" class="form-control" required>
@@ -30,12 +30,12 @@
                 <button class="btn btn-primary" type="submit">Cadastrar Usuario</button>
             </form>
 
-            {% if usuarios %}
-                <h3>Usuarios Cadastrados</h3>
-                <ul class="list-group mt3">
-                    {% for usuario in usuarios %}
-                    <li>
-                        {{ usuario.nome}} - {{ usuario.email }}
+            {% if lista_usuarios %}
+                <h3 class="mt-5">Usuarios Cadastrados</h3>
+                <ul class="list-group mt-3">
+                    {% for usuario in lista_usuarios %}
+                    <li class="list-group-item">
+                        {{ usuario.name}} - {{ usuario.email }}
                     </li>
                     {% endfor %}
                 </ul>
